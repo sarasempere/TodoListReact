@@ -11,6 +11,12 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .inputBox{
     width: 30rem;

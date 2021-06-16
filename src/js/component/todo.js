@@ -23,7 +23,7 @@ export const Todo = () => {
 	};
 	const listItems = todos.map((w, index) => (
 		<div key={index} className="row">
-			<li className="list-group-item col-8">
+			<li className="list-group-item col-12">
 				{w}{" "}
 				<button className="deleteBtn" onClick={() => deleteItem(w)}>
 					X
@@ -34,8 +34,8 @@ export const Todo = () => {
 
 	return (
 		<div className="container">
-			<h2 className="col-8 title">~todos~</h2>
-			<div className="col-8">
+			<h2 className="col-12 title">~todos~</h2>
+			<div className="col-12">
 				<input
 					className="inputBox"
 					type="text"
@@ -43,7 +43,7 @@ export const Todo = () => {
 					onChange={e => setInputValue(e.target.value)}
 					value={inputValue}
 				/>
-				<button class="btn btn-info" onClick={validateInput}>
+				<button className="btn btn-info" onClick={validateInput}>
 					Add!
 				</button>
 			</div>
