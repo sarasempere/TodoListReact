@@ -22,23 +22,33 @@ export const Todo = () => {
 		console.log(todos, "lista todos después de borrar");
 	};
 	const listItems = todos.map((w, index) => (
-		<div key={index}>
-			<li className="list-group-item">
-				{w} <button onClick={() => deleteItem(w)}>X</button>
+		<div key={index} className="row">
+			<li className="list-group-item col-8">
+				{w}{" "}
+				<button className="deleteBtn" onClick={() => deleteItem(w)}>
+					X
+				</button>
 			</li>
 		</div>
 	));
 
 	return (
-		<div>
-			<input
-				type="text"
-				onChange={e => setInputValue(e.target.value)}
-				value={inputValue}
-			/>
-			<button onClick={validateInput}></button>
-
+		<div className="container">
+			<h2 className="col-8 title">~todos~</h2>
+			<div className="col-8">
+				<input
+					className="inputBox"
+					type="text"
+					placeholder="Add a new task!"
+					onChange={e => setInputValue(e.target.value)}
+					value={inputValue}
+				/>
+				<button class="btn btn-info" onClick={validateInput}>
+					Add!
+				</button>
+			</div>
 			<ul className="list-group">{listItems}</ul>
+			<p>{`${todos.length} item/s left`}</p>
 		</div>
 	);
 };
