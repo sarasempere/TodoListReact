@@ -10,12 +10,13 @@ export const Todo = () => {
 	};
 
 	const deleteItem = item => {
-		console.log(item, "item a borrar");
+		console.log(todos.indexOf(item), "item a borrar");
 		let deleteList = [];
 		todos.map(function(x) {
-			if (x != item) {
+			if (todos.indexOf(x) != todos.indexOf(item)) {
 				deleteList.push(x);
 			}
+			console.log(deleteList);
 		});
 
 		setTodos(deleteList);
